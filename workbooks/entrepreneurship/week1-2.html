@@ -3,769 +3,685 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrepreneurship & Start-Up Workbook - JHS Ghana</title>
+    <title>Entrepreneurship & Start-Up Workbook - RETEC Africa</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
-        
-        @page {
-            size: A4;
-            margin: 0;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
             color: #1a1a1a;
             background: #f5f5f5;
+            padding: 0;
+            margin: 0;
         }
-        
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            padding: 20mm;
-            margin: 0 auto 10px;
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
             background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            page-break-after: always;
-            position: relative;
         }
-        
-        /* Cover Page */
-        .cover-page {
+
+        .header {
             background: linear-gradient(135deg, #CE1126 0%, #FCD116 50%, #006B3F 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
             color: white;
-            padding: 40mm 20mm;
+            padding: 30px 20px;
+            text-align: center;
         }
-        
-        .cover-logo {
-            background: white;
-            color: #006B3F;
-            padding: 15px 40px;
-            border-radius: 50px;
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
             font-size: 28px;
             font-weight: 800;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            letter-spacing: 2px;
-        }
-        
-        .cover-page h1 {
-            font-size: 56px;
-            font-weight: 800;
             margin-bottom: 10px;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
         }
-        
-        .cover-page h2 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .cover-subtitle {
-            font-size: 22px;
-            font-weight: 300;
-            margin-bottom: 50px;
+
+        .header p {
+            font-size: 16px;
             opacity: 0.95;
         }
-        
-        .cover-features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            width: 100%;
-            max-width: 600px;
-            margin: 30px 0;
+
+        .ghana-flag {
+            font-size: 40px;
+            margin: 15px 0;
         }
-        
-        .feature-badge {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 15px;
-            border: 2px solid rgba(255,255,255,0.3);
-        }
-        
-        .feature-badge .icon {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        
-        .feature-badge .text {
-            font-size: 14px;
-            font-weight: 600;
-        }
-        
-        .career-glimpse-box {
-            background: rgba(0,0,0,0.2);
-            padding: 25px;
-            border-radius: 15px;
-            margin-top: 40px;
-            border: 2px solid rgba(255,255,255,0.3);
-        }
-        
-        .career-glimpse-box h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #FCD116;
-        }
-        
-        .career-glimpse-box p {
-            font-size: 16px;
-            line-height: 1.8;
-        }
-        
-        /* Week Header */
-        .week-intro {
+
+        .week-header {
             background: linear-gradient(135deg, #CE1126, #FCD116);
             color: white;
-            padding: 40px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
+            padding: 25px 20px;
+            margin: 0;
         }
-        
-        .week-intro::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-        }
-        
-        .week-intro .week-number {
-            font-size: 72px;
-            font-weight: 800;
-            opacity: 0.2;
-            position: absolute;
-            top: -10px;
-            right: 30px;
-        }
-        
-        .week-intro h1 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-        
-        .week-intro h2 {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .week-intro .theme {
-            font-size: 18px;
-            font-weight: 300;
-            font-style: italic;
-            opacity: 0.95;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .career-glimpse {
-            background: rgba(255,255,255,0.2);
-            padding: 15px 20px;
-            border-radius: 10px;
-            margin-top: 20px;
+
+        .week-header h2 {
             font-size: 14px;
-            position: relative;
-            z-index: 1;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
         }
-        
-        .career-glimpse strong {
-            display: block;
-            margin-bottom: 5px;
+
+        .week-header h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .week-header p {
             font-size: 15px;
+            opacity: 0.95;
         }
-        
-        /* Day Header */
+
         .day-section {
-            margin-bottom: 40px;
+            padding: 20px;
+            border-bottom: 3px solid #f0f0f0;
         }
-        
+
         .day-header {
             background: linear-gradient(135deg, #006B3F, #00a86b);
             color: white;
-            padding: 25px 30px;
-            border-radius: 15px;
-            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
-        
+
         .day-number {
-            font-size: 48px;
-            font-weight: 800;
+            font-size: 36px;
+            font-weight: 900;
             background: rgba(255,255,255,0.2);
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 15px;
+            border-radius: 10px;
             flex-shrink: 0;
         }
-        
-        .day-title {
-            flex: 1;
-        }
-        
-        .day-title h2 {
-            font-size: 28px;
+
+        .day-title h4 {
+            font-size: 20px;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
-        
-        .day-title .subtitle {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        
-        /* Learning Goal */
+
         .learning-goal {
             background: linear-gradient(135deg, #FCD116, #ffed4e);
-            color: #1a1a1a;
-            padding: 20px 25px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            border-left: 6px solid #CE1126;
-            box-shadow: 0 4px 15px rgba(252,209,22,0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #CE1126;
         }
-        
-        .learning-goal .label {
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+
+        .learning-goal strong {
+            display: block;
             color: #CE1126;
-            margin-bottom: 8px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
         }
-        
-        .learning-goal .goal-text {
-            font-size: 16px;
+
+        .learning-goal p {
+            font-size: 15px;
             font-weight: 500;
-            line-height: 1.6;
         }
-        
-        /* Definitions Box */
+
         .definitions {
             background: #f8f9fa;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            border: 2px solid #e9ecef;
-        }
-        
-        .definitions h3 {
-            color: #006B3F;
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .definition-item {
-            margin-bottom: 15px;
-            padding: 12px 15px;
-            background: white;
+            padding: 15px;
             border-radius: 8px;
-            border-left: 4px solid #FCD116;
+            margin-bottom: 20px;
         }
-        
-        .definition-item:last-child {
-            margin-bottom: 0;
+
+        .definitions h5 {
+            color: #006B3F;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
         }
-        
+
+        .def-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #FCD116;
+        }
+
         .def-term {
             font-weight: 700;
             color: #CE1126;
-            font-size: 15px;
-        }
-        
-        .def-meaning {
-            color: #333;
-            margin-left: 5px;
             font-size: 14px;
         }
-        
-        /* Content Sections */
+
+        .def-meaning {
+            font-size: 14px;
+            color: #333;
+            margin-top: 3px;
+        }
+
         .content-section {
-            margin-bottom: 25px;
-        }
-        
-        .section-header {
-            color: #006B3F;
-            font-size: 20px;
-            font-weight: 700;
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #FCD116;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
-        
-        /* Step Boxes */
+
+        .section-title {
+            color: #006B3F;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #FCD116;
+            text-transform: uppercase;
+        }
+
         .step-box {
             background: white;
             border: 2px solid #006B3F;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
         }
-        
+
         .step-title {
             color: #CE1126;
             font-weight: 700;
-            font-size: 16px;
-            margin-bottom: 12px;
+            font-size: 15px;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
-        
+
         .step-content {
             font-size: 14px;
             line-height: 1.7;
-            color: #333;
         }
-        
-        .step-content ul {
-            margin: 12px 0 12px 20px;
+
+        .step-content ul, .step-content ol {
+            margin: 10px 0 10px 20px;
         }
-        
+
         .step-content li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
-        
+
         .step-content strong {
             color: #006B3F;
         }
-        
-        /* Options Grid */
-        .options-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 15px 0;
-        }
-        
-        .option-box {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 18px;
-            border-radius: 10px;
-            border-left: 5px solid #FCD116;
-            transition: transform 0.2s;
-        }
-        
-        .option-box:hover {
-            transform: translateY(-2px);
-        }
-        
-        .option-label {
-            font-weight: 700;
-            color: #CE1126;
-            font-size: 15px;
-            margin-bottom: 8px;
-        }
-        
-        .option-text {
-            font-size: 14px;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        /* Tip Box */
-        .tip-box {
-            background: linear-gradient(135deg, #fff9e6, #fffbf0);
-            border: 2px dashed #FCD116;
-            padding: 18px 20px;
-            border-radius: 10px;
-            margin: 20px 0;
+
+        .options {
             display: flex;
-            align-items: flex-start;
+            flex-direction: column;
             gap: 12px;
+            margin: 12px 0;
         }
-        
-        .tip-icon {
-            font-size: 24px;
-            flex-shrink: 0;
+
+        .option {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #FCD116;
         }
-        
-        .tip-content {
-            flex: 1;
-        }
-        
-        .tip-label {
-            font-weight: 700;
+
+        .option strong {
             color: #CE1126;
-            font-size: 14px;
+            display: block;
             margin-bottom: 5px;
         }
-        
-        .tip-text {
+
+        .tip-box {
+            background: #fff9e6;
+            border: 2px dashed #FCD116;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
             font-size: 14px;
-            color: #333;
-            line-height: 1.6;
         }
-        
-        /* Career Nugget */
+
+        .tip-box::before {
+            content: "💡 Tip: ";
+            font-weight: 700;
+            color: #CE1126;
+        }
+
         .career-nugget {
             background: linear-gradient(135deg, #006B3F, #00a86b);
             color: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 25px 0;
-            position: relative;
-            overflow: hidden;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
         }
-        
+
         .career-nugget::before {
-            content: '💼';
-            position: absolute;
-            font-size: 120px;
-            opacity: 0.1;
-            top: -20px;
-            right: -10px;
-        }
-        
-        .career-nugget-header {
+            content: "💼 CAREER NUGGET";
+            display: block;
             font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: #FCD116;
+        }
+
+        .career-nugget p {
             font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #FCD116;
-            margin-bottom: 12px;
+            line-height: 1.6;
         }
-        
-        .career-nugget-text {
-            font-size: 15px;
-            line-height: 1.7;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .career-nugget-text strong {
-            color: #FCD116;
-        }
-        
-        /* Work Area */
+
         .work-area {
-            background: linear-gradient(135deg, #f8f9fa, #ffffff);
-            border: 3px solid #006B3F;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 25px 0;
-            min-height: 180px;
+            background: #f8f9fa;
+            border: 2px solid #006B3F;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            min-height: 120px;
         }
-        
-        .work-area-header {
+
+        .work-area h6 {
             color: #CE1126;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
-        
+
         .work-space {
             background: white;
-            min-height: 120px;
-            border: 2px dashed #ccc;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 15px;
+            min-height: 80px;
+            border: 1px dashed #ccc;
+            border-radius: 6px;
+            padding: 10px;
+            margin-top: 10px;
         }
-        
-        .work-space-hint {
-            text-align: center;
-            color: #999;
-            font-style: italic;
-            font-size: 14px;
-        }
-        
+
         .work-lines {
             border-bottom: 1px solid #ddd;
-            height: 35px;
-            margin: 10px 0;
+            height: 30px;
+            margin: 8px 0;
         }
-        
-        /* Tables */
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 15px 0;
-            background: white;
+            font-size: 13px;
         }
-        
+
         table th {
             background: #006B3F;
             color: white;
-            padding: 15px;
+            padding: 10px 8px;
             text-align: left;
             font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
-        
+
         table td {
             border: 1px solid #e9ecef;
+            padding: 10px 8px;
+        }
+
+        .reflection {
+            background: #e8f5e9;
+            border: 2px solid #006B3F;
             padding: 15px;
-            font-size: 14px;
-            color: #333;
+            border-radius: 8px;
+            margin: 15px 0;
         }
-        
-        table tr:nth-child(even) {
-            background: #f8f9fa;
-        }
-        
-        /* Reflection Box */
-        .reflection-box {
-            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
-            border: 3px solid #006B3F;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 25px 0;
-        }
-        
-        .reflection-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        
-        .reflection-icon {
-            font-size: 28px;
-        }
-        
-        .reflection-label {
+
+        .reflection::before {
+            content: "⭐ Daily Reflection:";
+            display: block;
             font-weight: 700;
             color: #CE1126;
-            font-size: 17px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .reflection-prompt {
-            font-size: 15px;
-            color: #333;
             margin-bottom: 10px;
-            font-weight: 500;
+            font-size: 16px;
         }
-        
-        /* Parent Section */
+
+        .reflection p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
         .parent-section {
-            background: linear-gradient(135deg, #fff9e6, #fffef0);
-            border: 3px solid #FCD116;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 25px 0;
+            background: #fff9e6;
+            border: 2px solid #FCD116;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
         }
-        
-        .parent-section-header {
+
+        .parent-section h6 {
             color: #CE1126;
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 18px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .conversation-item {
             margin-bottom: 12px;
-            padding-left: 25px;
+            text-transform: uppercase;
+        }
+
+        .parent-section p {
+            margin-bottom: 8px;
+            padding-left: 20px;
             position: relative;
             font-size: 14px;
-            line-height: 1.7;
-            color: #333;
         }
-        
-        .conversation-item::before {
-            content: '💬';
+
+        .parent-section p::before {
+            content: "💬";
             position: absolute;
             left: 0;
-            font-size: 18px;
         }
-        
-        /* Checklist */
+
         .checklist {
             list-style: none;
             padding: 0;
         }
-        
-        .checklist-item {
-            padding: 10px 0;
-            padding-left: 35px;
+
+        .checklist li {
+            padding: 8px 0;
+            padding-left: 25px;
             position: relative;
             font-size: 14px;
-            line-height: 1.6;
         }
-        
-        .checklist-item::before {
-            content: '☐';
+
+        .checklist li::before {
+            content: "☐";
             position: absolute;
             left: 0;
-            font-size: 22px;
+            font-size: 18px;
             color: #006B3F;
         }
-        
-        /* Summary Box */
-        .summary-box {
+
+        .summary {
             background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
-            border: 4px solid #006B3F;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
+            border: 3px solid #006B3F;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 20px;
         }
-        
-        .summary-header {
+
+        .summary h4 {
             color: #CE1126;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
-        
-        .summary-content {
-            font-size: 15px;
+
+        .summary ul {
+            margin: 10px 0 10px 20px;
+        }
+
+        .summary li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .congrats {
+            background: linear-gradient(135deg, #006B3F, #00a86b);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .congrats h3 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .congrats p {
+            font-size: 16px;
             line-height: 1.8;
-        }
-        
-        .summary-list {
-            margin: 15px 0 15px 25px;
-        }
-        
-        .summary-list li {
             margin-bottom: 10px;
         }
-        
-        .summary-list strong {
-            color: #006B3F;
-        }
-        
-        /* Footer */
+
         .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 20px;
             text-align: center;
-            padding: 25px;
-            margin-top: 40px;
-            border-top: 3px solid #FCD116;
-            color: #666;
         }
-        
-        .footer-logo {
-            font-weight: 800;
-            color: #006B3F;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-        
-        .footer-tagline {
-            font-size: 14px;
+
+        .footer p {
+            font-size: 13px;
             margin-bottom: 5px;
         }
-        
-        .footer-website {
-            font-size: 13px;
-            color: #999;
+
+        .footer-logo {
+            font-weight: 800;
+            color: #FCD116;
+            font-size: 16px;
+            margin-bottom: 5px;
         }
-        
-        @media print {
-            body {
-                background: white;
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px;
             }
-            .page {
-                box-shadow: none;
-                margin: 0;
+
+            .day-section {
+                padding: 30px;
+            }
+
+            .options {
+                flex-direction: row;
+            }
+
+            .option {
+                flex: 1;
             }
         }
     </style>
 </head>
 <body>
 
-<!-- COVER PAGE -->
-<div class="page cover-page">
-    <div class="cover-logo">RETEC AFRICA</div>
-    <h1>ENTREPRENEURSHIP</h1>
-    <h2>& START-UP</h2>
-    <div class="cover-subtitle">Home-Based Learning Workbook for Junior High School</div>
-    
-    <div class="cover-features">
-        <div class="feature-badge">
-            <div class="icon">🇬🇭</div>
-            <div class="text">Built for<br>Ghana</div>
-        </div>
-        <div class="feature-badge">
-            <div class="icon">📚</div>
-            <div class="text">GES Curriculum<br>Aligned</div>
-        </div>
-        <div class="feature-badge">
-            <div class="icon">🚀</div>
-            <div class="text">Career-Focused<br>Learning</div>
-        </div>
+<div class="container">
+    <div class="header">
+        <div class="logo">RETEC AFRICA</div>
+        <h1>ENTREPRENEURSHIP & START-UP</h1>
+        <p>Home-Based Learning Workbook for Junior High School</p>
+        <div class="ghana-flag">🇬🇭</div>
     </div>
-    
-    <div class="career-glimpse-box">
-        <h3>Career Paths You'll Explore:</h3>
-        <p>Market Trader • Mobile Money Agent • Fashion Designer<br>
-        Food Vendor • Agribusiness Owner • Tech Innovator • Product Developer</p>
-    </div>
-</div>
 
-<!-- ==================== WEEK 1 ==================== -->
-<div class="page">
-    <div class="week-intro">
-        <div class="week-number">01</div>
-        <h1>Week 1</h1>
-        <h2>WHAT IS ENTREPRENEURSHIP?</h2>
-        <div class="theme">Discovering who entrepreneurs are and what they do</div>
-        <div class="career-glimpse">
-            <strong>Career Glimpse:</strong>
-            Market Seller | Mobile Money Agent | Seamstress | Food Vendor | Tech Innovator
-        </div>
+    <!-- WEEK 1 -->
+    <div class="week-header">
+        <h2>Week 1</h2>
+        <h3>WHAT IS ENTREPRENEURSHIP?</h3>
+        <p>Discovering who entrepreneurs are and what they do</p>
     </div>
-</div>
 
-<!-- WEEK 1 - DAY 1 -->
-<div class="page">
+    <!-- WEEK 1 DAY 1 -->
     <div class="day-section">
         <div class="day-header">
             <div class="day-number">01</div>
             <div class="day-title">
-                <h2>Who Are Entrepreneurs?</h2>
+                <h4>Who Are Entrepreneurs?</h4>
             </div>
         </div>
 
         <div class="learning-goal">
-            <div class="label">Learning Goal</div>
-            <div class="goal-text">Today, I will discover what entrepreneurship means, identify entrepreneurs around me, and understand how they help our community.</div>
+            <strong>Learning Goal</strong>
+            <p>Today, I will discover what entrepreneurship means, identify entrepreneurs around me, and understand how they help our community.</p>
         </div>
 
         <div class="definitions">
-            <h3>Quick Definitions</h3>
-   
+            <h5>Quick Definitions</h5>
+            <div class="def-item">
+                <div class="def-term">Entrepreneur:</div>
+                <div class="def-meaning">A person who starts their own business to solve problems and earn money.</div>
+            </div>
+            <div class="def-item">
+                <div class="def-term">Business:</div>
+                <div class="def-meaning">Selling goods or services to customers who need them.</div>
+            </div>
+            <div class="def-item">
+                <div class="def-term">Customer:</div>
+                <div class="def-meaning">A person who buys what you are selling.</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-title">Discovery Steps</div>
+
+            <div class="step-box">
+                <div class="step-title">ENGAGE - Think & Discuss</div>
+                <div class="step-content">
+                    Look around your community. Point out 3 people who own their own businesses (market seller, barber, seamstress, pure water seller, food vendor, mobile money agent).
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-title">EXPLORE - My Activity Choices</div>
+                <div class="options">
+                    <div class="option">
+                        <strong>Option A:</strong>
+                        Draw 3 business owners you know and label what they sell.
+                    </div>
+                    <div class="option">
+                        <strong>Option B:</strong>
+                        Write a list of 3 business owners and explain how they help people in your community.
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-title">EXPLAIN - Learn Together</div>
+                <div class="step-content">
+                    <p>Entrepreneurs see problems and create solutions that people will pay for.</p>
+                    <p style="margin-top: 10px;"><strong>Examples of entrepreneurs in Ghana:</strong></p>
+                    <ul>
+                        <li><strong>Market seller</strong> – sells vegetables and provisions</li>
+                        <li><strong>Seamstress</strong> – sews clothes and school uniforms</li>
+                        <li><strong>Barber</strong> – provides haircuts and grooming</li>
+                        <li><strong>Food vendor</strong> – cooks and sells meals</li>
+                        <li><strong>Mobile money agent</strong> – helps people send and receive money</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                Entrepreneurs are not always rich or famous — they are everyday problem-solvers in your community!
+            </div>
+
+            <div class="step-box">
+                <div class="step-title">ELABORATE - Imagine & Share</div>
+                <div class="step-content">
+                    <p>Imagine there were no entrepreneurs in your community. What would be missing?</p>
+                    <ul>
+                        <li>Would you have fresh bread in the morning?</li>
+                        <li>Who would repair your shoes or sew your uniform?</li>
+                        <li>Where would you buy pure water or phone credit?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="reflection">
+                <p>Fill in the blank: An entrepreneur is</p>
+                <div class="work-lines"></div>
+                <div class="work-lines"></div>
+            </div>
+        </div>
+
+        <div class="work-area">
+            <h6>My Creation Today</h6>
+            <ul class="checklist">
+                <li>My drawing or list of 3 entrepreneurs</li>
+                <li>My sentence completing "An entrepreneur is…"</li>
+            </ul>
+            <div class="work-space"></div>
+        </div>
+
+        <div class="parent-section">
+            <h6>Parent / Tutor Conversation Starters</h6>
+            <p>Can you show me 3 business owners in our neighborhood?</p>
+            <p>Which business helps our family the most?</p>
+            <p>If you could start a business tomorrow, what would you sell?</p>
+        </div>
+
+        <div class="career-nugget">
+            <p>Every big company started small. Many successful Ghanaian entrepreneurs started by making products in their homes or selling in small kiosks. Today, some of these businesses export to other countries. Your small idea today could grow into something huge tomorrow.</p>
+        </div>
+    </div>
+
+    <!-- WEEK 1 DAY 2 -->
+    <div class="day-section">
+        <div class="day-header">
+            <div class="day-number">02</div>
+            <div class="day-title">
+                <h4>Types of Businesses</h4>
+            </div>
+        </div>
+
+        <div class="learning-goal">
+            <strong>Learning Goal</strong>
+            <p>Today, I will explore different types of businesses and discover which type interests me most.</p>
+        </div>
+
+        <div class="definitions">
+            <h5>Quick Definitions</h5>
+            <div class="def-item">
+                <div class="def-term">Product-Based Business:</div>
+                <div class="def-meaning">Selling things people can touch and use (bread, clothes, shoes).</div>
+            </div>
+            <div class="def-item">
+                <div class="def-term">Service-Based Business:</div>
+                <div class="def-meaning">Helping people do things (haircuts, phone repairs, car washing).</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="step-box">
+                <div class="step-title">EXPLORE - Values That Matter</div>
+                <div class="step-content">
+                    <p><strong>Good entrepreneurs have these values:</strong></p>
+                    <ul>
+                        <li><strong>Honesty</strong> – Always tell the truth to customers</li>
+                        <li><strong>Hard Work</strong> – Work even when it's difficult</li>
+                        <li><strong>Punctuality</strong> – Deliver on time, always</li>
+                        <li><strong>Respect</strong> – Treat customers and helpers well</li>
+                        <li><strong>Responsibility</strong> – Keep your promises</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>Bad Business Practices to Avoid:</strong></p>
+                    <ul>
+                        <li>Cheating customers with wrong measurements</li>
+                        <li>Selling expired or fake products</li>
+                        <li>Being rude or disrespectful</li>
+                        <li>Not keeping your word</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                Your reputation is your most valuable asset! Customers remember how you treat them.
+            </div>
+
+            <div class="reflection">
+                <p>The most exciting thing I learned about entrepreneurship this week is</p>
+                <div class="work-lines"></div>
+                <div class="work-lines"></div>
+            </div>
+        </div>
+
+        <div class="work-area">
+            <h6>My Entrepreneurship Goal</h6>
+            <p><strong>My Goal Statement:</strong></p>
+            <div class="work-lines"></div>
+            <div class="work-lines"></div>
+            <p><strong>3 Values I Will Practice:</strong></p>
+            <div class="work-lines"></div>
+            <div class="work-lines"></div>
+            <div class="work-lines"></div>
+        </div>
+
+        <div class="parent-section">
+            <h
